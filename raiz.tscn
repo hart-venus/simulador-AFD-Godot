@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI.gd" type="Script" id=1]
+
+[node name="raiz" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+script = ExtResource( 1 )
+colorPrincipal = Color( 0.988235, 0.184314, 0.372549, 1 )
+
+[node name="generarEstado" type="Button" parent="UI"]
+margin_left = 8.0
+margin_top = 9.0
+margin_right = 214.0
+margin_bottom = 57.0
+text = "Generar Estado"
+
+[node name="LineEdit" type="LineEdit" parent="UI"]
+margin_left = 77.0
+margin_top = 66.0
+margin_right = 431.0
+margin_bottom = 90.0
+
+[node name="entrada" type="LineEdit" parent="UI"]
+margin_left = 77.0
+margin_top = 94.0
+margin_right = 243.0
+margin_bottom = 118.0
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 15.0
+margin_top = 69.0
+margin_right = 71.0
+margin_bottom = 83.0
+text = "Alfabeto"
+
+[node name="Label2" type="Label" parent="UI"]
+margin_left = 15.0
+margin_top = 99.0
+margin_right = 71.0
+margin_bottom = 113.0
+text = "Entrada"
+
+[node name="Button" type="Button" parent="UI"]
+margin_left = 222.0
+margin_top = 9.0
+margin_right = 431.0
+margin_bottom = 58.0
+text = "Generar Vinculo"
+
+[node name="PopupMenu" type="PopupMenu" parent="UI"]
+margin_left = 220.0
+margin_top = 76.0
+margin_right = 575.0
+margin_bottom = 215.0
+
+[node name="Label" type="Label" parent="UI/PopupMenu"]
+margin_left = 19.0
+margin_top = 17.0
+margin_right = 73.0
+margin_bottom = 115.0
+custom_constants/line_spacing = 0
+text = "Vinculo
+
+De                                          a
+
+Entradas"
+
+[node name="entradas" type="LineEdit" parent="UI/PopupMenu"]
+margin_left = 80.0
+margin_top = 66.0
+margin_right = 340.0
+margin_bottom = 90.0
+
+[node name="generarBoton" type="Button" parent="UI/PopupMenu"]
+margin_left = 222.0
+margin_top = 97.0
+margin_right = 340.0
+margin_bottom = 129.0
+text = "Generar"
+
+[node name="opcionDe" type="OptionButton" parent="UI/PopupMenu"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 202.0
+margin_bottom = 61.0
+
+[node name="opcionA" type="OptionButton" parent="UI/PopupMenu"]
+margin_left = 220.0
+margin_top = 41.0
+margin_right = 343.0
+margin_bottom = 61.0
+
+[node name="Aviso" type="PopupMenu" parent="UI"]
+margin_left = 224.0
+margin_top = 225.0
+margin_right = 550.0
+margin_bottom = 322.0
+
+[node name="Label" type="Label" parent="UI/Aviso"]
+margin_left = 15.0
+margin_top = 11.0
+margin_right = 190.0
+margin_bottom = 87.0
+
+[node name="Button2" type="Button" parent="UI"]
+margin_left = 252.0
+margin_top = 94.0
+margin_right = 430.0
+margin_bottom = 116.0
+text = "Probar"
+
+[connection signal="pressed" from="UI/generarEstado" to="UI" method="_on_generarEstado_pressed"]
+[connection signal="text_changed" from="UI/LineEdit" to="UI" method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="UI/Button" to="UI" method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/PopupMenu/generarBoton" to="UI" method="_on_generarBoton_pressed"]
+[connection signal="pressed" from="UI/Button2" to="UI" method="_on_Button2_pressed"]
